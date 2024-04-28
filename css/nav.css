@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400&display=swap');
+
+/* Default Start */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;   /*@Kue added border-box*/
+  /* background-color: #994ae3; */
+}
+
+
+:root {
+  --main-color: #994ae3;
+  --secondary-color: rgb(5, 5, 48);
+  --black: #464646;
+  --light-black: #999999;
+  --white: #fff;
+
+  /* --color1: cadetblue;
+    --color2: #3c033a; */
+}
+
+/* Default End */
+
+
+html::-webkit-scrollbar {
+  width: 1rem;
+}
+
+html::-webkit-scrollbar-track {
+  background-color: var(--white);
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: var(--main-color);
+}
+
+
+
+
+
+
+
+/* Header Start */
+header {
+  position: relative;
+  /* background: transparent; */
+  /* border: 3px solid white; */
+  /* padding: 40px; */
+  padding: 2.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar2 {
+  /* border: 1px solid #eee; */
+  display: flex;
+  align-items: center;
+  /* @Kue editing */
+  justify-content: space-around;
+  width: 98%;
+  position: fixed;
+  top: 2.3vh;
+  height: 8vh;
+  z-index: 99;
+  /* width: 20vw; */
+  /* background-color: var(--secondary-color); */
+  background-color: rgb(5, 5, 48, 0.5);
+  /* box-shadow: 20px 20px 20px black; */
+  border-radius: 10px 10px 10px 10px;
+}
+
+#logo {
+  display: flex;
+  position: relative;
+  /* @Kue editing the line below */
+  /* right: 20vw; */
+  margin: 10px 20px;
+}
+
+#logo img {
+  height: 50px;
+  margin: 0px 0px;
+  border-radius: 30px;
+}
+
+.navbar2 ul {
+  display: flex;
+  position: relative;
+    /* @Kue editing the line below */
+  /* left: 20vw; */
+  margin: 10px 20px;
+  /* @Kue editing the line below */
+  /* gap: 50px; */
+  gap: 2.5rem;
+}
+
+.navbar2 ul li {
+  list-style-type: none;
+  padding: 1em;
+
+}
+
+.navbar2 li a {
+  display: block;
+  color: white;
+  text-decoration: none;
+}
+
+ /* @Kue editing  */
+.navbar2 .toggle_btn {
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none;
+  margin-right: 2rem;
+}
+
+/* .navbar2 li:hover{
+    
+    border-radius: 15%;
+    box-shadow: inset 2px 2px 3px 3px black;
+} */
+
+.navbar2 a:hover {
+  color: cadetblue;
+  text-decoration: underline;
+  /* background: linear-gradient(45deg, #4e2b6e, #994ae3); */
+
+
+  /* animation-iteration-count: infinite; */
+
+}
+
+/*Header End */
+
+
+
+
+
+
+/* Footer media */
+
+
+/* Footer Media */
+
+
+
+/* logo css begin here */
+.social-icons {
+  margin: 20px 0;
+}
+
+.social-icons a {
+  border: 1px solid #ccc;
+  border-radius: 20%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 3px;
+  width: 40px;
+  height: 40px;
+}
+
+.inner {
+  a {
+
+    display: grid-rows 1;
+    justify-content: center;
+    padding: 10px;
+    align-items: center;
+    margin: 0 3px;
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.inner img {
+  max-width: 100%;
+  height: auto;
+}
+
+.shake-logo img {
+  transition: transform 1s;
+}
+
+.shake-logo img:hover {
+  transform: translateY(-10px);
+  animation: shakeing 4.5s;
+  animation-iteration-count: infinite;
+}
+
+/* logo css end here */
+
+/* @Kue editing */
+
+/* Dropdown menu */
+.dropdown {
+  display: none;
+  right: 2rem;
+  top: 70px;
+  height: 0;
+  width: 300px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: height cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dropdown.open {
+  height: 300px;
+  position: fixed;
+  background-color: rgba(153, 74, 227, 0.1);
+  
+}
+
+.dropdown li {
+  padding: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dropdown li a {
+  text-decoration: none;
+  color:#fff;
+  font-weight: bolder;
+}
+/* Responsive design */
+@media(max-width: 992px) {
+  .navbar2 li a {
+    padding: 8px; /* Adjust padding for smaller screens */
+    font-size: 14px; /* Decrease font size for smaller screens */
+  }
+  .navbar2 {
+    justify-content: space-between;
+  }
+  .navbar2 ul {
+    display: none;
+  }
+
+  .navbar2 .toggle_btn {
+    display: block;
+  }
+
+  .dropdown.open {
+    display: block;
+  }
+}
+
+
+
+/* Small Devices (Phones) */
+@media (max-width: 767.98px) {
+  
+  .dropdown {
+    left: 0; /* Reset the right positioning */
+    right: 0; /* Reset the left positioning */
+    width: 100%; /* Set the width to 100% */
+    max-width: none; /* Remove any max-width restriction */
+    position: absolute;
+  }
+}

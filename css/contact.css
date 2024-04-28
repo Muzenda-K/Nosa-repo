@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --main-color: #994ae3;
+    --secondary-color: rgb(5, 5, 48);
+    --black: #222;
+    --light-black: #999999;
+    --light-white: #fff9;
+    --white: #fff;
+    --border: .1rem solid var(--black);
+    --box-shadow: 0.5rem 1rem rgba(0, 0, 0, .1);
+    --text-shadow: 0 1.5rem 3rem rgba(0, 0, 0, .3);
+    --primary-color: #d578e7;
+    --extra-light: #f3f4f6;
+    --max-width: 1200px;
+}
+
+body {
+    background: url(../images/Untitled\ design\ \(4\).jpg);
+    background-size: cover;
+    background-position: center center;
+    height: 100vh;
+    max-width: 100vw;
+    margin: 0 auto;
+    background-color: #994ae3;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+.active {
+    color: cadetblue !important;
+}
+
+.contact {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+
+    color: #fff;
+    border-radius: 15px;
+
+    height: 100%;
+    z-index: -1;
+}
+
+.form {
+    padding: 20px;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    /* Updated to use rgba for transparency */
+    backdrop-filter: blur(10px);
+    /* Add blur effect */
+    border-radius: 10px;
+    /* z-index: -1; */
+}
+
+.form h2 {
+    font-size: 20px;
+    font-weight: 400;
+    font-family: 'Times New Roman', Times, serif;
+    color: var(--secondary-color);
+}
+
+.form input[type="text"],
+.form input[type="number"],
+.form input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border-radius: 20px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+    position: relative;
+    left: -10px;
+}
+
+.form input[type="checkbox"] {
+    width: 3%;
+    margin: 3px;
+    padding: 10px;
+    text-align: center;
+    margin-left: 15%;
+    /* pointer-events: none; */
+
+    /* position: absolute; */
+}
+
+.form input[type="submit"] {
+    cursor: pointer;
+    background-color: var(--primary-color);
+    transition: background-color 0.4s ease;
+    width: 30%;
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    margin-left: 30%;
+    padding: 10px;
+}
+
+.form input[type="submit"]:hover {
+    border: 2px solid var(--main-color);
+    background-color: var(--main-color);
+}
+
+.map {
+    padding: 20px;
+    /* border: 2px solid red; */
+    background: rgba(0, 0, 0, 0.4);
+    /* Updated to use rgba for transparency */
+    backdrop-filter: blur(10px);
+    /* Add blur effect */
+    border-radius: 10px;
+    z-index: -1;
+}
+
+.map iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 10px;
+}
+
+/* @Kue  Resposnsive design */
+
+@media (max-width: 767.98px) {
+    .contact {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contact .map {
+        height: 500px;
+    }
+
+}

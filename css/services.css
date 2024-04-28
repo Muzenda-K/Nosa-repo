@@ -1,0 +1,247 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* .services_background {
+    background: url(images/Untitled\ design\ \(4\).jpg) no-repeat;
+    background-size: cover;
+} */
+
+:root {
+    --main-color: #994ae3;
+    --secondary-color: rgb(5, 5, 48);
+    --black: #222;
+    --light-black: #999999;
+    --light-white: #fff9;
+    --white: #fff;
+    --border: .1rem solid var(--black);
+    --box-shadow: 0.5rem 1rem rgba(0, 0, 0, .1);
+    --text-shadow: 0 1.5rem 3rem rgba(0, 0, 0, .3);
+    --primary-color: #d578e7;
+    --extra-light: #f3f4f6;
+    --max-width: 1200px;
+}
+/* @Kue To highlight the current page on the nav bar */
+.active {
+    color: cadetblue !important;
+}
+
+body {
+    background: url(../images/Untitled\ design\ \(4\).jpg);
+    background-size: cover;
+    background-position: center center;
+    height: 100vh;
+    max-width: 100vw;
+    margin: 0 auto;
+    background-color: #994ae3;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+.our-services {
+    height: fit-content;
+}
+
+.our-service-container h1 {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    color: rgb(96, 143, 212);
+    font-size: 3rem;
+    margin-left: 29%;
+    align-items: center;
+    justify-content: center;
+}
+
+.our-service-container h1 span {
+    color: var(--main-color);
+    font-size: 3rem;
+}
+
+.our-service-container p {
+    color: var(--white);
+    font-size: 1.5rem;
+    text-align: justify;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 10px;
+    margin-bottom: -120px;
+    background: rgba(63, 63, 63, 0.5);
+    /* Updated to use rgba for transparency */
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 40px;
+}
+
+.wrapper-service {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-service {
+    max-width: 100%;
+    height: 400px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: start;
+}
+
+.card-service {
+    width: 80px;
+    border-radius: .75rem;
+    background-size: cover;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 2rem;
+    margin: 0 10px;
+    display: flex;
+    object-fit: cover;
+    align-items: flex-end;
+    transition: .6s cubic-bezier(.28, -0.03, 0, .99);
+    box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.8);
+}
+
+.card-service>.row {
+    color: white;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.card-service>.row>.icon {
+    background: #223;
+    color: white;
+    border-radius: 50%;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+}
+
+.card-service>.row>.description {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+    height: 80px;
+    width: 520px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition-delay: .3s;
+    transition: all .3s ease;
+}
+
+.description p {
+    color: #b0b0ba;
+    padding-top: 5px;
+}
+
+.description h4 {
+    text-transform: uppercase;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+input:checked+label {
+    width: 600px;
+}
+
+input:checked+label.description {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+.card-service[for="c1"] {
+    background-image: url('../images/DigitalMarketing.PNG');
+}
+
+.card-service[for="c2"] {
+    background-image: url('../images/video.png');
+}
+
+
+.card-service[for="c3"] {
+    background-image: url('../images/WEB.png');
+}
+
+
+.card-service[for="c4"] {
+    background-image: url('../images/app.png');
+}
+
+
+.card-service[for="c5"] {
+    background-image: url('../images/consulting.png');
+}
+
+
+.card-service[for="c6"] {
+    background-image: url('../images/automation.png');
+}
+
+.card-service[for="c7"] {
+    background-image: url('../images/retainer.png');
+}
+
+/* @Kue Responsive design */
+/* for small devices */
+@media (max-width: 767.98px) {
+    .our-service-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .our-service-container h1 {
+        text-align: center;
+        font-size: 1.5rem;
+        margin: 1rem 0;
+        
+    }
+
+    .our-service-container h1 span{
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .our-service-container p {
+        font-size: 1rem;
+    }
+    /* Styling for cards start here */
+    .wrapper-service {
+        overflow-x: auto; /* Enable horizontal scrolling */
+        white-space: nowrap; /* Prevent cards from wrapping to next line */
+        display: flex; /* Enable flex layout */
+        justify-content: flex-start; /* Align cards to the start */
+    }
+
+    .container-service {
+        max-width: unset;
+        scroll-snap-type: x mandatory; /* Enable snapping behavior */
+        display: inline-flex; /* Display cards in a row */
+        /* overflow: auto; */
+        flex: 0 0 auto;
+    }
+
+    .card-service {
+        width: 300px; /* Set width of each card */
+        margin-right: 10px; /* Add margin between cards */
+        border: 1px solid #ccc;
+        background-color: #f0f0f0;
+        transition: transform 0.3s ease; /* Smooth transition for swiping */
+        scroll-snap-align: start; /* Ensure card starts at the beginning of the viewport */
+    }
+
+    input:checked+label {
+        width: 500px;
+        
+    }
+    /* Styling for cards ends here */
+}
